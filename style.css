@@ -1,0 +1,192 @@
+ /* general variables */
+:root {
+  /* ### Primary */
+  --clr-primary-green: hsl(158, 36%, 37%);
+  --clr-primary-dgreen: rgba(26,64,49,255);
+  --clr-primary-cream: hsl(30, 38%, 92%);
+  /* ### Neutral */
+  --clr-Neutral-db: hsl(212, 21%, 14%);
+  --clr-Neutral-gb: hsl(228, 12%, 48%);
+  --clr-Neutral-white: hsl(0, 0%, 100%);
+  /* Font */
+  --fs-p: .875rem;
+  --ff-main: 'Montserrat', sans-serif;
+  --fw-m-1: 500;
+  --fw-m-2: 700;
+  --ff-sec: 'Fraunces', serif;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--ff-main);
+  background-color: var(--clr-primary-cream);
+  font-size: var(--fs-p);
+}
+/* Set core body defaults */
+body {
+  padding: 20px;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.button-clr {
+  background-color: var(--clr-primary-green);
+  color: var(--clr-Neutral-white);
+}
+
+.price-clr {
+  color: var(--clr-primary-green);
+}
+
+.button-clr:hover {
+  background-color: var(--clr-primary-dgreen);
+}
+
+.text-clr {
+  color: var(--clr-Neutral-db);
+}
+/* start */
+
+.container {
+  display: grid;
+  grid-template-columns: 230px 270px;
+  grid-template-rows: 390px;
+  justify-items: center;
+  max-width: 500px;
+  margin: 6rem auto;
+  background-color: var(--clr-Neutral-white);
+  border-radius: 8px;
+}
+.grid-img img,
+picture {
+  max-width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  height: 100%;
+}
+.grid-desc {
+  padding: 1rem 1.5rem 0 1rem;
+  margin-left: .7rem;
+}
+.semi-title {
+  font-weight:var(--fw-m-1) ;
+  opacity: .7;
+  margin: .7rem 0 .2rem .125rem;
+  letter-spacing: .12rem;
+}
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-m-2);
+  font-size: xx-large;
+  margin: .6rem 0 ;
+  line-height: 1;
+}
+.desc {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  opacity: .9;
+  }
+.price {
+    display: inline-flex;
+    padding: 0;
+  }
+  li {
+    padding: 0 .4rem;
+  }
+.new-price {
+    font-size: xx-large;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: var(--ff-sec)
+  }
+.linethrow {
+    text-decoration: line-through;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--clr-Neutral-db);
+  opacity: .9;
+}
+.button {
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  border: 0;
+  border-radius: 10px;
+}
+.button img {
+  margin: 0 .7rem;
+}
+@media only screen and (max-width: 550px){
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 350px;
+    max-width: 100%;
+  }
+    .grid-desc {
+      margin-left: .5rem;
+      margin-right: .9rem;
+    }
+    .button {
+      width: 100%;
+    }
+} 
